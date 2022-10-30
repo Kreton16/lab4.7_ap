@@ -1,2 +1,4 @@
 ﻿  pr4.7.cpp
+C:\Users\User\OneDrive\Робочий стіл\Student\PR4.7\pr4.7.cpp(8,42): warning C4101: 'ch': unreferenced local variable
+C:\Users\User\OneDrive\Робочий стіл\Student\PR4.7\pr4.7.cpp(8,38): warning C4101: 'sh': unreferenced local variable
   PR4.7.vcxproj -> C:\Users\User\OneDrive\Робочий стіл\Student\PR4.7\x64\Debug\PR4.7.exe

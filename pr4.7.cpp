@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+#include <math.h>
 using namespace std;
 int main()
 {
@@ -11,30 +12,29 @@ int main()
     cout << "dx = "; cin >> dx;
     cout << "eps = "; cin >> eps;
     cout << fixed;
-    
+
+
     x = xp;
-    if (abs(xk) < 1) {
-    cout << "-----------------------------------------" << endl;
-    cout << "|" << setw(5) << "x" << "   |"
-        << setw(10) << "Arth x " << " |"
-        << setw(7) << "S" << "    |"
-        << setw(5) << "n" << " |"
-        << endl;
-    cout << "-----------------------------------------" << endl;
+    if (abs(xk) < 1 && abs(xp) < 1) {
+        cout << "-----------------------------------------" << endl;
+        cout << "|" << setw(5) << "x" << "   |"
+            << setw(10) << "Arth x " << " |"
+            << setw(7) << "S" << "    |"
+            << setw(5) << "n" << " |"
+            << endl;
+        cout << "-----------------------------------------" << endl;
         while (x <= xk)
         {
-            n = 0; 
-            a = 1; 
-            S += a;
+            n = 0;
+            a = x;
+            S = a;
             do {
                 n++;
-                R = 2 * n * x / (2 * n + 1); 
+                R = (2 * n * x * x - x * x) / (2 * n + 1);
                 a *= R;
                 S += a;
             } while (abs(a) >= eps);
-            sh = (exp(x) - exp(-x)) / 2;
-            ch = (exp(x) + exp(-x)) / 2;
-            Arth = sh / ch;
+            Arth = (1.0 / 2 * log((1 + x) / (1 - x)));
             cout << "|" << setw(7) << setprecision(2) << x << " |"
                 << setw(10) << setprecision(5) << Arth << " |"
                 << setw(10) << setprecision(5) << S << " |"
@@ -47,7 +47,7 @@ int main()
     }
     else
         cout << "x >= 1!";
-        
-    
+
+
     return 0;
 }
